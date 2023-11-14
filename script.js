@@ -71,4 +71,10 @@ function verif(param) {
 // iterate through the instruments items with a for loop.
 //seperate every words in the items using .split()
 //iterate through the new created array to check if the word is the issuer
-//isolate esach issuer in a new array using
+//isolate esach issuer in a new array using .push()
+//return all the issuers
+
+//add all the same issuers in a new variables
+// don't forget to store all the index in another variable
+
+//make the calculation
