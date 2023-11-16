@@ -9,6 +9,17 @@ let originalNotional = [10000000.00,17000000.00,25000000.00,43000000.00,60000000
 let currentNotional = [10000000.00,17000000.00,25000000.00,43000000.00,0.00,120000000.00,30000000.00,17500000.00,44000000.00,143000000.00,320000000.00,53000000.00,45000000.00,0.00,8000000.00,23000000.00,20000000.00,100000000.00,7500000.00,148000000.00,88500000.00,15000000.00,30000000.00,45000000.00,50000000.00,34500000.00,23000000.00,1800000.00,11000000.00,15000000.00,15800000.00,40000000.00,0.00,17000000.00,33500000.00,17000000.00,0.00,0.00,0,80000000.00,262500000.00,7000000.00,130000000.00,36000000.00,30000000.00,159000000.00,12000000.00,0,35000000.00,12000000.00,39500000.00,10000000.00,17000000.00,9000000.00,19000000.00,0,43500000.00,15000000.00,0,25000000.00,20000000.00,0.00,38800000.00,75000000.00,12600000.00,80000000.00,30000000.00,0,10000000.00,32500000.00,70000000.00,43500000.00,0.00,0.00,5400000.00,145000000.00,27000000.00,43800000.00,60000000.00,40000000.00,0.00,30000000.00,24000000.00,0.00,45000000.00,45000000.00,0,165000000.00,0,10000000.00,19000000.00,0,0.00,780000000.00,2300000000.00,1105000000.00,0.00,0.00,845000000.00,2600000000.00,1950000000.00,0.00,5200000000.00,25000000.00,50000000.00,15000000.00,17000000.00,77000000.00,0.00,60000000.00,61000000.00,70000000.00,0.00,0.00,0.00,0.00,40000000.00,0.00,0.00,40000000.00,0.00,30000000.00,6000000.00,20000000.00,0.00,2500000.00,40000000.00,35000000.00,5000000.00,85000000.00,0.00,300000.00,0.00,40000000.00,50000000.00,0.00,15000000.00,71000000.00,80000000.00,30000000.00,37000000.00,20000000.00,0.00,35000000.00,22500000.00,88000000.00,30000000.00,40000000.00,0.00,130000000.00,80000000.00,20000000.00];
 
 
+// Iterate to extract the companies name
+
+function companiesList(array) {
+  let result = [];
+  for(let i = 0; i < array.length; i++) {
+    let companyName = corporationName(array[i]);
+    result.push(companyName);
+  }
+  return result;
+}
+
 function corporationName(string) {
   let words = string.split(' ');
   let sliceIndex = [];
@@ -24,14 +35,7 @@ function corporationName(string) {
   return company.join(" ");
 }
 
-function companiesList(array) {
-  let result = [];
-  for(let i = 0; i < array.length; i++) {
-    let companyName = corporationName(array[i]);
-    result.push(companyName);
-  }
-  return result;
-}
+//Match the different arrays and change the arrays into "key : value(s)" pairs
 
 function createMainObject(corporation, instruments, markToMarket, originalNotional, currentNotional) {
   let object = {};
@@ -46,8 +50,6 @@ function createMainObject(corporation, instruments, markToMarket, originalNotion
   return object;
 }
 
-console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional));
-
 function createObject(array1, array2) {
   let object = {}
   for(let i = 0; i < array1.length; i++) {
@@ -58,6 +60,7 @@ function createObject(array1, array2) {
 
 
 
+//Gaia Calculation Process
 
 const GaiaOriginalNotional = (instruments, markToMarket, notional) => {
   for(let i = 0; i < markToMarket.length; i++) {
@@ -86,9 +89,7 @@ const GaiaCurrentNotional = (instruments, markToMarket, notional) => {
 };
 
 
-
-
-
+//intermediary fucntions
 
 function verification(issuers, amounts) {
 	for(let i = 0; i < issuers.length; i++) {
