@@ -89,7 +89,7 @@ const GaiaCurrentNotional = (instruments, markToMarket, notional) => {
 };
 
 
-//intermediary fucntions
+//intermediary fucntions to check if the main functions works
 
 function verification(issuers, amounts) {
 	for(let i = 0; i < issuers.length; i++) {
