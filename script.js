@@ -56,7 +56,8 @@ function createMainObject(corporation, instruments, markToMarket, originalNotion
   return result;
 }
 
-console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional))
+let finalObject = createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional)
+console.log(finalObject)
 
 function createObject(array1, array2) {
   let object = {}
@@ -70,32 +71,40 @@ function createObject(array1, array2) {
 
 //Gaia Calculation Process
 
-const GaiaOriginalNotional = (instruments, markToMarket, notional) => {
-  for(let i = 0; i < markToMarket.length; i++) {
-    if(instruments[i][0] === "B") {
-      let resultLongCDS = markToMarket[i] + ((1 - 0.4) * notional[i]);
-      console.log(`The Original version of JTD is ${instruments[i]} is : ${resultLongCDS}`);
+function corporationDataToJTD(list, notionalType) {
+  let counter = 0;
+  for(let i = 0; i < list.length; i++) {
+    if(list[i].instruments[0] === "B") {
+      let resultLongCDS = list[i].markToMarket + ((1 - 0.4) * list[i][notionalType]);
+      counter += resultLongCDS
     } else {
-      let resultShortCDS = markToMarket[i] - ((1 - 0.4) * notional[i]);
-      console.log(`The Original version of JTD of ${instruments[i]} is : ${resultShortCDS}`);
+      let resultShortCDS = list[i].markToMarket - ((1 - 0.4) * list[i][notionalType]);
+      counter -= resultShortCDS
     }
   }
-  return
-};
+  return counter;
+}
 
-const GaiaCurrentNotional = (instruments, markToMarket, notional) => {
-  for(let i = 0; i < markToMarket.length; i++) {
-    if(instruments[i][0] === "B") {
-      let resultLongCDS = markToMarket[i] + ((1 - 0.4) * notional[i]);
-      console.log(`The Current version of JTD is ${instruments[i]} is : ${resultLongCDS}`);
-    } else {
-      let resultShortCDS = markToMarket[i] - ((1 - 0.4) * notional[i]);
-      console.log(`The Current version of JTD is ${instruments[i]} is : ${resultShortCDS}`);
-    }
+console.log(corporationDataToJTD([
+  {
+    "instruments": "Buy AEP SNRFOR USD 100 Mar 2024",
+    "markToMarket": -116782.01,
+    "originalNotional": 25000000,
+    "currentNotional": 25000000
+  },
+  {
+    "instruments": "Buy AEP SNRFOR USD 100 Mar 2026",
+    "markToMarket": -920369.75,
+    "originalNotional": 50000000,
+    "currentNotional": 50000000
+  },
+  {
+    "instruments": "Buy AEP SNRFOR USD 100 Mar 2027",
+    "markToMarket": -334731.15,
+    "originalNotional": 15000000,
+    "currentNotional": 15000000
   }
-  return
-};
-
+], "originalNotional"));
 
 //intermediary fucntions to check if the main functions works
 
