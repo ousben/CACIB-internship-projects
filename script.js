@@ -56,8 +56,7 @@ function createMainObject(corporation, instruments, markToMarket, originalNotion
   return result;
 }
 
-let finalObject = createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional)
-console.log(finalObject)
+//console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional))
 
 function createObject(array1, array2) {
   let object = {}
