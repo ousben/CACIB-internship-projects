@@ -35,20 +35,28 @@ function corporationName(string) {
   return company.join(" ");
 }
 
+
 //Match the different arrays and change the arrays into "key : value(s)" pairs
 
 function createMainObject(corporation, instruments, markToMarket, originalNotional, currentNotional) {
-  let object = {};
+  let result = {};
   for(let i = 0; i < corporation.length; i++) {
-    object[instruments[i]] = {
+    let objectPattern = {
       instruments: instruments[i],
       markToMarket: markToMarket[i],
       originalNotional: originalNotional[i],
-      currentNotional: currentNotional[i] 
+      currentNotional: currentNotional[i]
+    }
+    if(result.hasOwnProperty(corporation[i])) {
+      result[corporation[i]].push(objectPattern)
+    } else {
+      result[corporation[i]] = [objectPattern]
     }
   }
-  return object;
+  return result;
 }
+
+console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional))
 
 function createObject(array1, array2) {
   let object = {}
