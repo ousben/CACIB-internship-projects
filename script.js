@@ -56,7 +56,7 @@ function createMainObject(corporation, instruments, markToMarket, originalNotion
   return result;
 }
 
-//console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional))
+console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional))
 
 function createObject(array1, array2) {
   let object = {}
@@ -83,6 +83,26 @@ function corporationDataToJTD(list, notionalType) {
   }
   return counter;
 }
+
+function main(object) {
+  let result = {};
+  for(let i = 0; i < Object.keys(object).length; i++) {
+    let counter = corporationDataToJTD(object);
+  }
+  return result;
+}
+
+function createObject(array1, array2) {
+  let object = {}
+  for(let i = 0; i < array1.length; i++) {
+    object[array1[i]] = array2[i];
+  }
+  return object;
+}
+
+
+
+
 
 console.log(corporationDataToJTD([
   {
