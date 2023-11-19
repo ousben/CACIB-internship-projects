@@ -91,8 +91,6 @@ function main(object, notionalType) {
   return result;
 }
 
-
-
 //intermediary fucntions to check if the main functions works
 
 function verification(issuers, amounts) {
