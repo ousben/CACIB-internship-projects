@@ -56,8 +56,6 @@ function createMainObject(corporation, instruments, markToMarket, originalNotion
   return result;
 }
 
-console.log(createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional))
-
 function createObject(array1, array2) {
   let object = {}
   for(let i = 0; i < array1.length; i++) {
@@ -66,7 +64,7 @@ function createObject(array1, array2) {
   return object;
 }
 
-
+let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, originalNotional, currentNotional)
 
 //Gaia Calculation Process
 
@@ -84,46 +82,16 @@ function corporationDataToJTD(list, notionalType) {
   return counter;
 }
 
-function main(object) {
+function main(object, notionalType) {
   let result = {};
   for(let i = 0; i < Object.keys(object).length; i++) {
-    let counter = corporationDataToJTD(object);
+    let counter = corporationDataToJTD(Object.values(object)[i], notionalType);
+    result[Object.keys(object)[i]] = counter
   }
   return result;
 }
 
-function createObject(array1, array2) {
-  let object = {}
-  for(let i = 0; i < array1.length; i++) {
-    object[array1[i]] = array2[i];
-  }
-  return object;
-}
 
-
-
-
-
-console.log(corporationDataToJTD([
-  {
-    "instruments": "Buy AEP SNRFOR USD 100 Mar 2024",
-    "markToMarket": -116782.01,
-    "originalNotional": 25000000,
-    "currentNotional": 25000000
-  },
-  {
-    "instruments": "Buy AEP SNRFOR USD 100 Mar 2026",
-    "markToMarket": -920369.75,
-    "originalNotional": 50000000,
-    "currentNotional": 50000000
-  },
-  {
-    "instruments": "Buy AEP SNRFOR USD 100 Mar 2027",
-    "markToMarket": -334731.15,
-    "originalNotional": 15000000,
-    "currentNotional": 15000000
-  }
-], "originalNotional"));
 
 //intermediary fucntions to check if the main functions works
 
