@@ -11,15 +11,6 @@ let currentNotional = [10000000.00,17000000.00,25000000.00,43000000.00,0.00,1200
 
 // Iterate to extract the companies name
 
-function companiesList(array) {
-  let result = [];
-  for(let i = 0; i < array.length; i++) {
-    let companyName = corporationName(array[i]);
-    result.push(companyName);
-  }
-  return result;
-}
-
 function corporationName(string) {
   let words = string.split(' ');
   let sliceIndex = [];
@@ -33,6 +24,15 @@ function corporationName(string) {
   }
   let company = words.slice(sliceIndex[0] + 1, sliceIndex[1]);
   return company.join(" ");
+}
+
+function companiesList(array) {
+  let result = [];
+  for(let i = 0; i < array.length; i++) {
+    let companyName = corporationName(array[i]);
+    result.push(companyName);
+  }
+  return result;
 }
 
 
