@@ -96,25 +96,7 @@ function main(object, notionalType) {
   return result;
 }
 
-//intermediary fucntions to check if the main functions works
 
-function verification(issuers, amounts) {
-	for(let i = 0; i < issuers.length; i++) {
-  	console.log(`${issuers[i]} : ${amounts[i]}`);
-  }
-}
-
-function verification2(instruments, mtm, original, current) {
-	for(let i = 0; i < instruments.length; i++) {
-  	console.log(`${instruments[i]} = mtm : ${mtm[i]} , original : ${original[i]} , current : ${current[i]}`);
-  }
-}
-
-function verif(param) {
-  for(let i = 0; i < param.length; i++) {
-    console.log(param[i][0]);
-  }
-}
 
 let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, currentNotional)
 console.log(exampleObject)
