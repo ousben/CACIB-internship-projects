@@ -1,3 +1,5 @@
+//Examples of variables that the user will have to provide to the web app
+
 let issuersList = ["ACCOR","AEP","AES CORPORATION","AIR LIQUIDE","ALSTOM","ANGLO AMER PLC","ARROW ELEC","AUCHAN","BAE SYSTEMS","BAYER","BMW","BOEING COMPANY","BOUYGUES","BP","CAPGEMINI","CARDINAL","CARREFOUR","CNHINDUS","CONTINENTAL AG","DANONE","DCX","DELTA AIRLINES","EADS","FAURECIA","FIAT","FINMECCANICA","FIRSTENERGYCORP","FORD MOTOR CO","FRANCE TEL","FREEPORT MCMORA","GAS NAT SDG","GDF","GENERALI","GEORWORL","GOODYEAR TIRE","HEINEKEN","HEINZ","HOCHTIEF","HONEYWELL INT","HOSTHNR","IBERDROLA","INT PAPER COMP","KRAFTFOODS","LAGARDERE","LOCKHEED MARTIN","LUFTHANSA","LVMH","MAC DONALD","MARUBENI","MCKESSONCORP","MGM MIRAGE","MITSUBISHI HVY","M-REAL","NOKIA","NRG ENERGY INC","OCCPETCO","ORIX CORP","PEMEX","PERNOD","PETROLEO","PPR","QBE","RENAULT","ROLLS ROYCE PLC","SAINT GOBAIN","SANOFI-AVENTIS","SEMPRA ENERGY","SIEMENS","SMURFITK","STATOIL","STORA ENSO","SUMITOMO","TELEFONICA","TELIASONERA","THYSSENKRUPP","TYCOPLC","UNTECHNO","VEOLIA","VINCI","VOLKSWAGEN","VOLVO","XEROX"];
 
 let jtdAmounts = [6088329.24,51489320.81,10300942.59,25793464.57,25520494.28,79362819.12,43118328.37,28126264.41,29453992.32,280951751.16,32162044.21,107558022.92,58724190.07,61419447.20,4622277.80,22567597.25,91053001.79,61777620.95,9103431.21,45537987.04,30332905.66,23387110.87,20735771.54,1874232.04,16715602.88,74224714.47,17063495.64,3501576.28,10221046.28,11446881.62,48707946.49,21038720.85,158542336.73,4481934.51,1515841.05,78737912.07,22555528.17,41409869.49,22570290.73,48078638.23,100774451.17,172294.77,28106979.64,12101636.64,8498231.03,21100196.11,36675572.06,40347288.21,5024916.94,44814824.76,18790123.44,9379499.07,19019465.94,21187630.10,21584673.61,11349921.89,12303112.18,24213856.38,26351986.28,83083277.76,9255975.63,28005979.51,27206698.04,80085520.96,61316809.27,18035195.38,124802194.09,6163734.57,22928043.10,42983278.85,31812363.74,61849359.65,216164592.99,18708510.72,24240802.40,22711215.48,22758332.88,54673213.81,101634368.69,6046013.84,11566120.77,11175569.40];
@@ -8,96 +10,140 @@ let instrumentsCorporations = ["ACCOR","AIRL","AIRL","ALSTOM","ALSTOM","ANGLO AM
 
 let markToMarket = [-100528.57,-324994.24,-330115.06,226260.55,0,-8086125.12,401236.94,-84894.91,-712327.59,-1826580.91,-1887035.39,-425918.52,-484045.50,0,-55256.33,-454087.44,-247680.03,-1544055.06,-131502.80,-2438262.09,-9226673.85,-121625.00,-70821.25,-557479.54,-393197.01,-77044.12,-80568.27,-92312.56,-261834.16,-1009967.29,-283187.80,-5433910.11,0,-412296.30,-1589198.34,-41362.21,0,0,0,-805649.21,-1359951.41,-323905.57,-893901.97,-842188.41,-1367276.53,-1974217.01,-125661.52,0,-143202.65,-47887.68,-1002046.55,-593356.87,-2394841.88,-109134.76,-882001.07,0,-304153.97,-274462.34,0,-153670.84,-107812.65,0,-174935.99,-272634.33,-48604.29,-789941.67,-71058.99,0,-176202.86,-3630085.88,-1068334.49,-5989838.64,0,0,-79751.12,-2344054.28,-306501.17,-288410.23,-605897.68,-576514.95,0,-747516.63,-289413.58,0,-479994.26,-301522.00,0,-2837646.71,0,-58215.28,-189066.85,0,0,-27200680.54,-11335150.45,-19740484.61,0,0,-6163294.27,-28473911.18,-46382904.43,0,-108436325.59,-116782.01,-920369.75,-334731.15,-961999.98,-166788.28,0,-122803.25,-480919.35,-459525.55,0,0,0,0,-267806.63,0,0,-1340280.76,0,-350658.75,-194063.26,-109063.67,0,-142088.65,-254925.19,-246875.44,-23717.00,-702572.93,0,-5291.35,0,-428767.33,-224447.31,0,-138470.24,-787319.56,-190942.06,-1749092.26,-1187764.51,-205462.66,0,218460.85,-127982.87,-686641.75,-115812.05,-482372.40,0,-896438.95,-1240865.85,-18451.87];
 
-//let originalNotional = [10000000.00,17000000.00,25000000.00,43000000.00,60000000.00,120000000.00,30000000.00,17500000.00,48000000.00,143000000.00,320000000.00,53000000.00,45000000.00,38000000.00,8000000.00,23000000.00,20000000.00,100000000.00,7500000.00,148000000.00,88500000.00,15000000.00,30000000.00,45000000.00,50000000.00,34500000.00,35000000.00,3000000.00,11000000.00,15000000.00,23000000.00,40000000.00,32500000.00,17000000.00,33500000.00,17000000.00,10000000.00,100000000.00,0,80000000.00,262500000.00,7000000.00,130000000.00,36000000.00,30000000.00,165000000.00,20000000.00,0,35000000.00,20000000.00,39500000.00,10000000.00,17000000.00,9000000.00,25000000.00,0,43500000.00,15000000.00,0,25000000.00,20000000.00,23500000.00,58000000.00,75000000.00,21000000.00,80000000.00,30000000.00,0,10000000.00,32500000.00,70000000.00,43500000.00,20000000.00,35000000.00,9000000.00,145000000.00,27000000.00,73000000.00,60000000.00,40000000.00,45000000.00,30000000.00,40000000.00,5000000.00,45000000.00,45000000.00,0,165000000.00,0,10000000.00,19000000.00,0,9000000000.00,1200000000.00,2300000000.00,1700000000.00,12000000000.00,2600000000.00,1300000000.00,4000000000.00,3000000000.00,3000000000.00,8000000000.00,25000000.00,50000000.00,15000000.00,17000000.00,77000000.00,20000000.00,60000000.00,61000000.00,70000000.00,5000000.00,10000000.00,10000000.00,15000000.00,40000000.00,40000000.00,20000000.00,40000000.00,14000000.00,30000000.00,6000000.00,20000000.00,8500000.00,2500000.00,40000000.00,35000000.00,5000000.00,85000000.00,62000000.00,300000.00,5000000.00,40000000.00,50000000.00,85000000.00,15000000.00,71000000.00,80000000.00,30000000.00,37000000.00,20000000.00,40000000.00,35000000.00,30000000.00,88000000.00,50000000.00,40000000.00,30000000.00,130000000.00,80000000.00,20000000.00];
+let notional = [10000000.00,17000000.00,25000000.00,43000000.00,0.00,120000000.00,30000000.00,17500000.00,44000000.00,143000000.00,320000000.00,53000000.00,45000000.00,0.00,8000000.00,23000000.00,20000000.00,100000000.00,7500000.00,148000000.00,88500000.00,15000000.00,30000000.00,45000000.00,50000000.00,34500000.00,23000000.00,1800000.00,11000000.00,15000000.00,15800000.00,40000000.00,0.00,17000000.00,33500000.00,17000000.00,0.00,0.00,0,80000000.00,262500000.00,7000000.00,130000000.00,36000000.00,30000000.00,159000000.00,12000000.00,0,35000000.00,12000000.00,39500000.00,10000000.00,17000000.00,9000000.00,19000000.00,0,43500000.00,15000000.00,0,25000000.00,20000000.00,0.00,38800000.00,75000000.00,12600000.00,80000000.00,30000000.00,0,10000000.00,32500000.00,70000000.00,43500000.00,0.00,0.00,5400000.00,145000000.00,27000000.00,43800000.00,60000000.00,40000000.00,0.00,30000000.00,24000000.00,0.00,45000000.00,45000000.00,0,165000000.00,0,10000000.00,19000000.00,0,0.00,780000000.00,2300000000.00,1105000000.00,0.00,0.00,845000000.00,2600000000.00,1950000000.00,0.00,5200000000.00,25000000.00,50000000.00,15000000.00,17000000.00,77000000.00,0.00,60000000.00,61000000.00,70000000.00,0.00,0.00,0.00,0.00,40000000.00,0.00,0.00,40000000.00,0.00,30000000.00,6000000.00,20000000.00,0.00,2500000.00,40000000.00,35000000.00,5000000.00,85000000.00,0.00,300000.00,0.00,40000000.00,50000000.00,0.00,15000000.00,71000000.00,80000000.00,30000000.00,37000000.00,20000000.00,0.00,35000000.00,22500000.00,88000000.00,30000000.00,40000000.00,0.00,130000000.00,80000000.00,20000000.00];
 
-let currentNotional = [10000000.00,17000000.00,25000000.00,43000000.00,0.00,120000000.00,30000000.00,17500000.00,44000000.00,143000000.00,320000000.00,53000000.00,45000000.00,0.00,8000000.00,23000000.00,20000000.00,100000000.00,7500000.00,148000000.00,88500000.00,15000000.00,30000000.00,45000000.00,50000000.00,34500000.00,23000000.00,1800000.00,11000000.00,15000000.00,15800000.00,40000000.00,0.00,17000000.00,33500000.00,17000000.00,0.00,0.00,0,80000000.00,262500000.00,7000000.00,130000000.00,36000000.00,30000000.00,159000000.00,12000000.00,0,35000000.00,12000000.00,39500000.00,10000000.00,17000000.00,9000000.00,19000000.00,0,43500000.00,15000000.00,0,25000000.00,20000000.00,0.00,38800000.00,75000000.00,12600000.00,80000000.00,30000000.00,0,10000000.00,32500000.00,70000000.00,43500000.00,0.00,0.00,5400000.00,145000000.00,27000000.00,43800000.00,60000000.00,40000000.00,0.00,30000000.00,24000000.00,0.00,45000000.00,45000000.00,0,165000000.00,0,10000000.00,19000000.00,0,0.00,780000000.00,2300000000.00,1105000000.00,0.00,0.00,845000000.00,2600000000.00,1950000000.00,0.00,5200000000.00,25000000.00,50000000.00,15000000.00,17000000.00,77000000.00,0.00,60000000.00,61000000.00,70000000.00,0.00,0.00,0.00,0.00,40000000.00,0.00,0.00,40000000.00,0.00,30000000.00,6000000.00,20000000.00,0.00,2500000.00,40000000.00,35000000.00,5000000.00,85000000.00,0.00,300000.00,0.00,40000000.00,50000000.00,0.00,15000000.00,71000000.00,80000000.00,30000000.00,37000000.00,20000000.00,0.00,35000000.00,22500000.00,88000000.00,30000000.00,40000000.00,0.00,130000000.00,80000000.00,20000000.00];
-
-let currencies = ["AED","AUD","BHD","CAD","CHF","CNY","CZK","DJF","DKK","DZD","GBP","HKD","HUF","IDR","INR","JPY","KRW","KWD","MAD","MYR","MXN","NOK","NZD","PHP","PLN","RUB","SAR","SEK","SGD","THB","TND","TWD","USD","VEB","ZAR","BDT","LKR","MUR","PKR","QAR","TRY","VUV","ISK","PEN","BRL","RON","HRK","EEK","ILS","LTL","COP","CLP","CNH","EUR"];
+let currenciesPanel = ["AED","AUD","BHD","CAD","CHF","CNY","CZK","DJF","DKK","DZD","GBP","HKD","HUF","IDR","INR","JPY","KRW","KWD","MAD","MYR","MXN","NOK","NZD","PHP","PLN","RUB","SAR","SEK","SGD","THB","TND","TWD","USD","VEB","ZAR","BDT","LKR","MUR","PKR","QAR","TRY","VUV","ISK","PEN","BRL","RON","HRK","EEK","ILS","LTL","COP","CLP","CNH","EUR"];
 
 let rate = [3.924654,1.663812,0.402985,1.469188,0.962077,7.77852,24.633,189.712175,7.457596,143.844195,0.868805,8.355617,378.125,16700.655,88.937132,160.80925,1397.544575,0.329942,10.922207,4.991498,18.724394,11.962499,1.802311,59.883014,4.4595,98.933484,4.008371,11.68095,1.447871,38.01723,3.37646,34.411043,1.0685,265544.6468,19.644159,117.802125,350.200875,47.174275,304.5225,3.897621,30.454921,130.89125,150.5,4.033908,5.202527,4.967884,7.524537,12.887798,4.143002,3.049392,4286.976933,949.91787,7.781886,1];
 
-// Iterate to extract the companies name
+
+
+
+
+//Iterate through the instruments variable to extract the companies name
 
 function corporationName(string) {
-  let words = string.split(' ');
-  let sliceIndex = [];
-  for(let i = 0; i < words.length; i++) {
-    if(words[i] === "Buy" || words[i] === "Sell") {
-      sliceIndex.push(i);
+    let words = string.split(' ');
+    let sliceIndex = [];
+    for(let i = 0; i < words.length; i++) {
+        if(words[i] === "Buy" || words[i] === "Sell") {
+            sliceIndex.push(i);
+        }
+        if(words[i] === "SNRFOR" || words[i] === "SUBLT2") {
+            sliceIndex.push(i);
+        }
     }
-    if(words[i] === "SNRFOR" || words[i] === "SUBLT2") {
-      sliceIndex.push(i)
-    }
-  }
-  let company = words.slice(sliceIndex[0] + 1, sliceIndex[1]);
-  return company.join(" ");
+    let company = words.slice(sliceIndex[0] + 1, sliceIndex[1]);
+    return company.join(' ');
 }
+
+//Iterate through the instruments variable to extract the currency used
+
+function currencyName(string) {
+    let words = string.split(' ');
+    let sliceIndex = [];
+    for(let i = 0; i < words.length; i++) {
+        if(words[i] === "SNRFOR" || words[i] === "SUBLT2") {
+            sliceIndex.push(i);
+        }
+        if(words[i] === "100" || words[i] === "200" || words[i] === "300" || words[i] === "400" || words[i] === "500") {
+            sliceIndex.push(i);
+        }
+    }
+    let currency = words.slice(sliceIndex[0] + 1, sliceIndex[1])
+    return currency.join(' ');
+}
+
+//companiesList() function will return a full company array using the corporationName() function
 
 function companiesList(array) {
-  let result = [];
-  for(let i = 0; i < array.length; i++) {
-    let companyName = corporationName(array[i]);
-    result.push(companyName);
-  }
-  return result;
+    let result = [];
+    for(let i = 0; i < array.length; i++) {
+        let companyName = corporationName(array[i]);
+        result.push(companyName);
+    }
+    return result;
 }
 
+//currenciesList() function will return a full array of currencies using the currencyName() function
 
-//Match the different arrays and change the arrays into "key : value(s)" pairs
-
-function createMainObject(corporation, instruments, markToMarket, currentNotional) {
-  let result = {};
-  for(let i = 0; i < corporation.length; i++) {
-    let objectPattern = {
-      instruments: instruments[i],
-      markToMarket: markToMarket[i],
-      currentNotional: currentNotional[i]
+function currenciesList(array) {
+    let result = [];
+    for(let i = 0; i < array.length; i++) {
+        let currency = currencyName(array[i]);
+        result.push(currency);
     }
-    if(result.hasOwnProperty(corporation[i])) {
-      result[corporation[i]].push(objectPattern)
-    } else {
-      result[corporation[i]] = [objectPattern]
-    }
-  }
-  return result;
+    return result;
 }
+
+let currencies = currenciesList(instruments);
+console.log(currencies)
+
+//createMainObject() iterate through all the various arrays given to create an Object and if the issuers have already an issance it will push into an already created array else will create it.
+//Modify this array to take in account the currency
+
+function createMainObject(corporation, instruments, markToMarket, notional, currency) {
+    let result = {};
+    for(let i = 0; i < corporation.length; i++) {
+        let objectPattern = {
+            instruments: instruments[i],
+            markToMarket: markToMarket[i],
+            notional: notional[i],
+            currency: currency[i]
+        }
+        if(result.hasOwnProperty(corporation[i])) {
+            result[corporation[i]].push(objectPattern)
+        } else {
+            result[corporation[i]] = [objectPattern]
+        }
+    }
+    return result;
+}
+
+//CreateSimpleObject() create an object that iterate through 2 arrays to create a simple object (key : values)
 
 function createSimpleObject(array1, array2) {
-  let object = {}
-  for(let i = 0; i < array1.length; i++) {
-    object[array1[i]] = array2[i];
-  }
-  return object;
-}
-
-console.log(createSimpleObject(currencies, rate));
-//Gaia Calculation Process
-
-function corporationDataToJTD(list, notionalType) {
-  let counter = 0;
-  for(let i = 0; i < list.length; i++) {
-    if(list[i].instruments[0] === "B") {
-      let resultLongCDS = list[i].markToMarket + ((1 - 0.4) * list[i][notionalType]);
-      counter += resultLongCDS
-    } else {
-      let resultShortCDS = list[i].markToMarket - ((1 - 0.4) * list[i][notionalType]);
-      counter += resultShortCDS
+    let object = {}
+    for(let i = 0; i < array1.length; i++) {
+        object[array1[i]] = array2[i];
     }
-  }
-  return counter;
+    return object;
 }
 
-function main(object, notionalType) {
-  let result = {};
-  for(let i = 0; i < Object.keys(object).length; i++) {
-    let counter = corporationDataToJTD(Object.values(object)[i], notionalType);
-    result[Object.keys(object)[i]] = counter
-  }
-  return result;
+//corporationDataToJTD() function will do the calculation needed
+//add the currency exchange rate to multiply the right amount.
+
+function corporationDataToJTD(list) {
+    let counter = 0;
+    for(let i = 0; i < list.length; i++) {
+        if(list[i].instruments[0] === "B") {
+            let resultLongCDS = list[i].markToMarket + ((1 - 0.4) * list[i].notional);
+            counter += resultLongCDS
+        } else {
+            let resultShortCDS = list[i].markToMarket - ((1 - 0.4) * list[i].notional);
+            counter += resultShortCDS
+        }
+    }
+    return counter;
+}
+
+//main() function is the last function because it is made to create an object that contain all the informations that must be displayed on screen
+
+function main(object) {
+    let result = {};
+    for(let i = 0; i < Object.keys(object).length; i++) {
+        let counter = corporationDataToJTD(Object.values(object)[i]);
+        result[Object.keys(object)[i]] = counter
+    }
+    return result;
 }
 
 
+let officialJTDList = createSimpleObject(issuersList, jtdAmounts)
+//console.log(officialJTDList);
 
-let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, currentNotional)
-console.log(exampleObject)
-console.log(main(exampleObject,"currentNotional"));
+let currencyTable = createSimpleObject(currencies, rate);
+//console.log(currencyTable);
+
+let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, notional, currencies);
+console.log(exampleObject);
