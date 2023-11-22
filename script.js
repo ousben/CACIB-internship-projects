@@ -14,9 +14,9 @@ let notional = [10000000.00,17000000.00,25000000.00,43000000.00,0.00,120000000.0
 
 let currenciesPanel = ["AED","AUD","BHD","CAD","CHF","CNY","CZK","DJF","DKK","DZD","GBP","HKD","HUF","IDR","INR","JPY","KRW","KWD","MAD","MYR","MXN","NOK","NZD","PHP","PLN","RUB","SAR","SEK","SGD","THB","TND","TWD","USD","VEB","ZAR","BDT","LKR","MUR","PKR","QAR","TRY","VUV","ISK","PEN","BRL","RON","HRK","EEK","ILS","LTL","COP","CLP","CNH","EUR"];
 
-let rate = [3.924654,1.663812,0.402985,1.469188,0.962077,7.77852,24.633,189.712175,7.457596,143.844195,0.868805,8.355617,378.125,16700.655,88.937132,160.80925,1397.544575,0.329942,10.922207,4.991498,18.724394,11.962499,1.802311,59.883014,4.4595,98.933484,4.008371,11.68095,1.447871,38.01723,3.37646,34.411043,1.0685,265544.6468,19.644159,117.802125,350.200875,47.174275,304.5225,3.897621,30.454921,130.89125,150.5,4.033908,5.202527,4.967884,7.524537,12.887798,4.143002,3.049392,4286.976933,949.91787,7.781886,1];
+let ratePanel = [3.924654,1.663812,0.402985,1.469188,0.962077,7.77852,24.633,189.712175,7.457596,143.844195,0.868805,8.355617,378.125,16700.655,88.937132,160.80925,1397.544575,0.329942,10.922207,4.991498,18.724394,11.962499,1.802311,59.883014,4.4595,98.933484,4.008371,11.68095,1.447871,38.01723,3.37646,34.411043,1.0685,265544.6468,19.644159,117.802125,350.200875,47.174275,304.5225,3.897621,30.454921,130.89125,150.5,4.033908,5.202527,4.967884,7.524537,12.887798,4.143002,3.049392,4286.976933,949.91787,7.781886,1];
 
-
+let currencies = ["EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD"]
 
 
 
@@ -75,9 +75,6 @@ function currenciesList(array) {
     }
     return result;
 }
-
-let currencies = currenciesList(instruments);
-console.log(currencies)
 
 //createMainObject() iterate through all the various arrays given to create an Object and if the issuers have already an issance it will push into an already created array else will create it.
 //Modify this array to take in account the currency
@@ -142,8 +139,8 @@ function main(object) {
 let officialJTDList = createSimpleObject(issuersList, jtdAmounts)
 //console.log(officialJTDList);
 
-let currencyTable = createSimpleObject(currencies, rate);
-//console.log(currencyTable);
+let currencyTable = createSimpleObject(currenciesPanel, ratePanel);
+console.log(currencyTable);
 
 let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, notional, currencies);
 console.log(exampleObject);
