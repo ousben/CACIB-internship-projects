@@ -19,6 +19,15 @@ let ratePanel = [3.924654,1.663812,0.402985,1.469188,0.962077,7.77852,24.633,189
 let currencies = ["EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","EUR","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","JPY","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD","USD"]
 
 
+//CreateSimpleObject() create an object that iterate through 2 arrays to create a simple object (key : values)
+
+function createSimpleObject(firstArray, secondArray) {
+    let object = {}
+    for(let i = 0; i < firstArray.length; i++) {
+        object[firstArray[i]] = secondArray[i];
+    }
+    return object;
+}
 
 //Iterate through the instruments variable to extract the companies name
 
@@ -97,16 +106,6 @@ function createMainObject(corporation, instruments, markToMarket, notional, curr
     return result;
 }
 
-//CreateSimpleObject() create an object that iterate through 2 arrays to create a simple object (key : values)
-
-function createSimpleObject(array1, array2) {
-    let object = {}
-    for(let i = 0; i < array1.length; i++) {
-        object[array1[i]] = array2[i];
-    }
-    return object;
-}
-
 //corporationDataToJTD() function will do the calculation needed
 //add the currency exchange rate to multiply the right amount.
 
@@ -140,7 +139,7 @@ let officialJTDList = createSimpleObject(issuersList, jtdAmounts)
 //console.log(officialJTDList);
 
 let currencyTable = createSimpleObject(currenciesPanel, ratePanel);
-console.log(currencyTable);
+//console.log(currencyTable);
 
 let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, notional, currencies);
-console.log(exampleObject);
+//console.log(exampleObject);
