@@ -143,12 +143,9 @@ function main(object) {
 
 
 let officialJTDList = createSimpleObject(issuersList, jtdAmounts)
-console.log(officialJTDList);
 
 let currenciesTable = createSimpleObject(currenciesPanel, ratePanel);
-//console.log(currencyTable);
 
 let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, notional, currencies);
-//console.log(exampleObject);
 
 console.log(main(exampleObject))
