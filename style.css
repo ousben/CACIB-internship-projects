@@ -1,4 +1,73 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./5fe8ce91c2e5710acb036571_Gilroy-SemiBold.woff2') format('woff2'), url('./5fe8ce3dd7bed21429dbe87d_Gilroy-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Gilroy;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+    position: fixed;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-grow: 2;
+}
+
+li {
+    margin-right: 40px;
+    list-style: none;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.nav-li {
+    cursor: pointer;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+}
+
+nav a:hover {
+    color: #ff5300;
+}
+
 body {
     background-color: #000000;
 }
 
+p {
+    color: white;
+}
