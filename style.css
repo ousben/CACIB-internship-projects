@@ -82,7 +82,10 @@ p {
 }
 
 #main-container {
+    display: flex;
     justify-content: center;
+    flex-direction: column;
+
 }
 
 #notional-report-input {

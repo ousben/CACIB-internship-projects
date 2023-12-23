@@ -19,10 +19,27 @@
 
     <div id="notional-report">
         <div id="main-container">
-            <label for="notional-report-input">notional report calculation : </label>
-            <input type="text" id="notional-report-input" name="notional-report-input" class="notional-report-input"/>
+            <label for="issuers-list">Issuers List : </label>
+            <input type="text" id="issuers-list" name="issuers-list" class="issuers-list"/>
+            <label for="jtd-amount">Jump-to-Default Amount : </label>
+            <input type="text" id="jtd-amount" name="jtd-amount" class="jtd-amount"/>
+
+            <label for="instruments"> Instruments : </label>
+            <input type="text" id="instruments" name="instruments" class="instruments"/>
+            <label for="mark-to-market">Mark to Market : </label>
+            <input type="text" id="mark-to-market" name="mark-to-market" class="mark-to-market"/>
+            <label for="notional">Notional : </label>
+            <input type="text" id="notional" name="notional" class="notional"/>
+
+            <label for="currency">Currency List : </label>
+            <input type="text" id="currency" name="currency" class="currency"/>
+            <label for="rate">Rate List : </label>
+            <input type="text" id="rate" name="rate" class="rate"/>
+
             <button id="process-button">Process</button>
         </div>
+        
+        <div id="result"></div>
     </div>
 
     <script src="script.js"></script>
