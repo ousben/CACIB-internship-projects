@@ -16,6 +16,9 @@ let ratePanel = [3.924654,1.663812,0.402985,1.469188,0.962077,7.77852,24.633,189
 //CreateSimpleObject() create an object that iterate through 2 arrays to create a simple object (key : values)
 
 function createSimpleObject(firstArray, secondArray) {
+    if(firstArray.length != secondArray.length) {
+        return "The first list and the second list do not have the same length"
+    }
     let object = {}
     for(let i = 0; i < firstArray.length; i++) {
         object[firstArray[i]] = secondArray[i];
