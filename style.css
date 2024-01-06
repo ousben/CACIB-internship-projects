@@ -33,14 +33,14 @@ nav {
     margin-left: 20px;
 }
 
-ul {
+nav > ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     flex-grow: 2;
 }
 
-li {
+nav > li {
     margin-right: 40px;
     list-style: none;
     padding: 10px;
@@ -83,13 +83,11 @@ p {
 }
 
 #main-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     height: 100%;
     width: 50%;
-}
-
-#notional-report-input {
-    height: 60px;
-    width: 300px;
 }
 
 #process-button {
@@ -99,17 +97,21 @@ p {
 
 #result {
     display: flex;
-    flex-direction: column;
     height: 100%;
     width: 50%;
+    background-color: orange;
 }
 
 #issuers-list-result {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 50%;
     background-color: red;
 }
 
 #calculation-result {
-    
+    height: 100vh;
+    width: 50%;
+    background-color: blue;
 }

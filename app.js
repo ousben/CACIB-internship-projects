@@ -38,6 +38,10 @@ mainForm.addEventListener("submit", function(event) {
     li.textContent = item;
     return li;
   })
-  firstList.append(...issuersListLi, ...issuersListNumLi);
+  for(let i = 0; i < issuersListLi.length; i++) {
+    let content = document.createElement("li");
+    content.textContent = `${i} = ${issuersListLi[i]} : ${issuersListNumLi[i]}`
+    firstList.append(content);
+  }
   resultIssuersList.append(firstList);
 });
