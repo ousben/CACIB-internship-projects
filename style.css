@@ -81,7 +81,7 @@ p {
     justify-content: center;
 }
 
-#main-container {
+#main-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
