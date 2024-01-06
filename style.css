@@ -66,7 +66,7 @@ nav a:hover {
 }
 
 body {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 p {
@@ -76,16 +76,15 @@ p {
 #notional-report {
     display: flex;
     height: 100vh;
+    width: 100vw;
     background-color: grey;
     align-items: center;
     justify-content: center;
 }
 
 #main-form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+    height: 100%;
+    width: 50%;
 }
 
 #notional-report-input {
@@ -96,4 +95,21 @@ p {
 #process-button {
     height: 2rem;
     width: 10rem;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+#issuers-list-result {
+    height: 100vh;
+    width: 50%;
+    background-color: red;
+}
+
+#calculation-result {
+    
 }

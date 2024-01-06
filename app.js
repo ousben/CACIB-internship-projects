@@ -1,6 +1,6 @@
 const notionalInput = document.getElementById("notional-report-input");
 const mainForm = document.getElementById("main-form");
-const resultField = document.getElementById("result");
+const resultIssuersList = document.getElementById("issuers-list-result");
 
 
 const issuersList = document.getElementById("issuers-list");
@@ -39,5 +39,5 @@ mainForm.addEventListener("submit", function(event) {
     return li;
   })
   firstList.append(...issuersListLi, ...issuersListNumLi);
-  resultField.append(firstList);
+  resultIssuersList.append(firstList);
 });
