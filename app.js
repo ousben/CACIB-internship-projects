@@ -39,6 +39,7 @@ mainForm.addEventListener("submit", function(event) {
   resultIssuersList.append(firstList);
 
   let secondList = document.createElement("ol");
+
   let currenciesItems = createStringArrayFromInput(currency);
   let rateItems = createFloatArrayFromInput(rate);
   let instrumentsItems = createStringArrayFromInput(instruments);
@@ -48,7 +49,13 @@ mainForm.addEventListener("submit", function(event) {
   let corporationNameItem = companiesList(instrumentsItems);
   let currencyNameItem = currenciesList(instrumentsItems);
 
-  
+  let mainObject = createMainObject(corporationNameItem, instrumentsItems, markToMarketItems, notionalItems, currencyNameItem);
+  for(let i = 0; i < mainObject.length; i++) {
+    let li = document.createElement("li");
+    let computation = corporationDataToJTD(mainObject[i]);
+    li.textContent = computation;
+    secondList.append(li);
+  }
 
   resultCalculationList.append(secondList);
 });
