@@ -21,6 +21,7 @@ function createStringArrayFromExcel(string) {
 function createFloatArrayFromExcel(string) {
     let splitString = string.split("\n");
     return splitString.map(item => {
+        item = item.replace(",", ".");
         return parseFloat(item);
     })
 }
@@ -130,7 +131,7 @@ function createMainObject(corporation, instruments, markToMarket, notional, curr
 //corporationDataToJTD() function will do the calculation needed
 //add the currency exchange rate to multiply the right amount.
 
-function corporationDataToJTD(list) {
+function corporationDataToJTD(list, currenciesTable) {
     let counter = 0;
     for(let i = 0; i < list.length; i++) {
         if(list[i].instruments[0] === "B") {

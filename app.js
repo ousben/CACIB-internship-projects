@@ -28,6 +28,8 @@ function createFloatArrayFromInput(input) {
 
 mainForm.addEventListener("submit", function(event) {
   event.preventDefault();
+  resultIssuersList.textContent = "";
+  resultCalculationList.textContent = "";
   let firstList = document.createElement("ol");
   let issuersItems = createStringArrayFromInput(issuersList);
   let issuersItemsResult = createFloatArrayFromInput(jtdAmount);
@@ -42,6 +44,9 @@ mainForm.addEventListener("submit", function(event) {
 
   let currenciesItems = createStringArrayFromInput(currency);
   let rateItems = createFloatArrayFromInput(rate);
+
+  let currenciesTable = createSimpleObject(currenciesItems, rateItems);
+
   let instrumentsItems = createStringArrayFromInput(instruments);
   let markToMarketItems = createFloatArrayFromInput(markToMarket);
   let notionalItems = createFloatArrayFromInput(notional);
@@ -50,10 +55,11 @@ mainForm.addEventListener("submit", function(event) {
   let currencyNameItem = currenciesList(instrumentsItems);
 
   let mainObject = createMainObject(corporationNameItem, instrumentsItems, markToMarketItems, notionalItems, currencyNameItem);
-  for(let i = 0; i < mainObject.length; i++) {
+  console.log(mainObject);
+  for(let i = 0; i < Object.keys(mainObject).length; i++) {
     let li = document.createElement("li");
-    let computation = corporationDataToJTD(mainObject[i]);
-    li.textContent = computation;
+    let computation = corporationDataToJTD(Object.values(mainObject)[i], currenciesTable);
+    li.textContent = `${Object.keys(mainObject)[i]} : ${computation}`;
     secondList.append(li);
   }
 
