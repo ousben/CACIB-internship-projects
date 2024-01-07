@@ -1,6 +1,7 @@
 const notionalInput = document.getElementById("notional-report-input");
 const mainForm = document.getElementById("main-form");
 const resultIssuersList = document.getElementById("issuers-list-result");
+const resultCalculationList = document.getElementById("calculation-result");
 
 
 const issuersList = document.getElementById("issuers-list");
@@ -27,19 +28,27 @@ function createFloatArrayFromInput(input) {
 
 mainForm.addEventListener("submit", function(event) {
   event.preventDefault();
-  let firstList = document.createElement("ul");
-  let issuersListLi = createStringArrayFromInput(issuersList).map(item => {
+  let firstList = document.createElement("ol");
+  let issuersItems = createStringArrayFromInput(issuersList);
+  let issuersItemsResult = createFloatArrayFromInput(jtdAmount);
+  for(let i = 0; i < issuersItems.length; i++) {
     let li = document.createElement("li");
-    li.textContent = item;
-    return li;
-  })
-  let issuersListNumLi = createFloatArrayFromInput(jtdAmount).map(item => {
-    let li = document.createElement("li");
-    li.textContent = item;
-    return li;
-  })
-  for(let i = 0; i < issuersListLi.length; i++) {
-    firstList.append(issuersListLi[i], issuersListNumLi[i]);
+    li.textContent = `${issuersItems[i]} : ${issuersItemsResult[i]}`;
+    firstList.append(li);
   }
   resultIssuersList.append(firstList);
+
+  let secondList = document.createElement("ol");
+  let currenciesItems = createStringArrayFromInput(currency);
+  let rateItems = createFloatArrayFromInput(rate);
+  let instrumentsItems = createStringArrayFromInput(instruments);
+  let markToMarketItems = createFloatArrayFromInput(markToMarket);
+  let notionalItems = createFloatArrayFromInput(notional);
+
+  let corporationNameItem = companiesList(instrumentsItems);
+  let currencyNameItem = currenciesList(instrumentsItems);
+
+  
+
+  resultCalculationList.append(secondList);
 });

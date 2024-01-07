@@ -158,8 +158,8 @@ function main(object) {
 }
 
 
-let officialJTDList = createSimpleObject(issuersList, jtdAmounts)
+// let officialJTDList = createSimpleObject(issuersList, jtdAmounts)
 
-let currenciesTable = createSimpleObject(currenciesPanel, ratePanel);
+// let currenciesTable = createSimpleObject(currenciesPanel, ratePanel);
 
-let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, notional, currencies);
+// let exampleObject =  createMainObject(instrumentsCorporations, instruments, markToMarket, notional, currencies);
