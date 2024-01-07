@@ -19,11 +19,11 @@ nav {
     align-items: center;
     width: 100%;
     height: 10vh;
-    background-color: black;
+    background-color: #ffffff;
     z-index: 10;
 }
 
-.logo {
+#logo {
     font-size: 20px;
     font-weight: 800;
     margin-left: 20px;
@@ -50,7 +50,7 @@ nav > li {
 nav a {
     text-decoration: none;
     font-size: 17px;
-    color: white;
+    color: #000000;
     font-weight: 600;
     font-size: 20px;
     transition: 0.1s ease-in;
@@ -75,7 +75,6 @@ p {
     display: flex;
     height: 90vh;
     width: 100vw;
-    background-color: grey;
     align-items: center;
     justify-content: center;
 }
@@ -103,7 +102,6 @@ label {
     display: flex;
     height: 100%;
     width: 50%;
-    background-color: orange;
 }
 
 #issuers-list-result {
@@ -111,11 +109,17 @@ label {
     flex-direction: column;
     height: 90vh;
     width: 50%;
-    background-color: red;
 }
 
 #calculation-result {
     height: 90vh;
     width: 50%;
-    background-color: blue;
+}
+
+.result-field {
+    overflow: auto;
+}
+
+.result-field > ul {
+    list-style-type: none;
 }

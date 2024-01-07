@@ -17,51 +17,60 @@ const rate = document.getElementById("rate");
 
 
 function createStringArrayFromInput(input) {
-  return createStringArrayFromExcel(input.value);
+    return createStringArrayFromExcel(input.value);
 }
 
 function createFloatArrayFromInput(input) {
-  return createFloatArrayFromExcel(input.value);
+    return createFloatArrayFromExcel(input.value);
 }
 
 
 
 mainForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-  resultIssuersList.textContent = "";
-  resultCalculationList.textContent = "";
-  let firstList = document.createElement("ol");
-  let issuersItems = createStringArrayFromInput(issuersList);
-  let issuersItemsResult = createFloatArrayFromInput(jtdAmount);
-  for(let i = 0; i < issuersItems.length; i++) {
-    let li = document.createElement("li");
-    li.textContent = `${issuersItems[i]} : ${issuersItemsResult[i]}`;
-    firstList.append(li);
-  }
-  resultIssuersList.append(firstList);
+    event.preventDefault();
+    resultIssuersList.textContent = "";
+    resultCalculationList.textContent = "";
 
-  let secondList = document.createElement("ol");
+    let firstList = document.createElement("ul");
 
-  let currenciesItems = createStringArrayFromInput(currency);
-  let rateItems = createFloatArrayFromInput(rate);
+    let issuersItems = createStringArrayFromInput(issuersList);
+    let issuersItemsResult = createFloatArrayFromInput(jtdAmount);
 
-  let currenciesTable = createSimpleObject(currenciesItems, rateItems);
+    for(let i = 0; i < issuersItems.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${issuersItems[i]} : ${issuersItemsResult[i]}`;
+        firstList.append(li);
+    }
+    resultIssuersList.append(firstList);
 
-  let instrumentsItems = createStringArrayFromInput(instruments);
-  let markToMarketItems = createFloatArrayFromInput(markToMarket);
-  let notionalItems = createFloatArrayFromInput(notional);
+    let secondList = document.createElement("ul");
 
-  let corporationNameItem = companiesList(instrumentsItems);
-  let currencyNameItem = currenciesList(instrumentsItems);
+    let currenciesItems = createStringArrayFromInput(currency);
+    let rateItems = createFloatArrayFromInput(rate);
 
-  let mainObject = createMainObject(corporationNameItem, instrumentsItems, markToMarketItems, notionalItems, currencyNameItem);
-  console.log(mainObject);
-  for(let i = 0; i < Object.keys(mainObject).length; i++) {
-    let li = document.createElement("li");
-    let computation = corporationDataToJTD(Object.values(mainObject)[i], currenciesTable);
-    li.textContent = `${Object.keys(mainObject)[i]} : ${computation}`;
-    secondList.append(li);
-  }
+    let currenciesTable = createSimpleObject(currenciesItems, rateItems);
 
-  resultCalculationList.append(secondList);
+    let instrumentsItems = createStringArrayFromInput(instruments);
+    let markToMarketItems = createFloatArrayFromInput(markToMarket);
+    let notionalItems = createFloatArrayFromInput(notional);
+
+    let corporationNameItem = companiesList(instrumentsItems);
+    let currencyNameItem = currenciesList(instrumentsItems);
+
+    let mainObject = createMainObject(corporationNameItem, instrumentsItems, markToMarketItems, notionalItems, currencyNameItem);
+    
+    mainObject = sortObject(mainObject);
+
+
+    for(let i = 0; i < Object.keys(mainObject).length; i++) {
+        let computation = corporationDataToJTD(Object.values(mainObject)[i], currenciesTable);
+        computation = computation.toFixed(2);
+        if(computation != 0) {
+            let li = document.createElement("li");
+            li.textContent = `${Object.keys(mainObject)[i]} : ${computation}`;
+            secondList.append(li);
+        }
+    }
+
+    resultCalculationList.append(secondList);
 });
