@@ -21,12 +21,17 @@ nav {
     height: 10vh;
     background-color: #ffffff;
     z-index: 10;
+    flex-shrink: 0;
 }
 
 #logo {
     font-size: 20px;
     font-weight: 800;
     margin-left: 20px;
+}
+
+img {
+    margin-right: 20px;
 }
 
 nav > ul {
@@ -67,6 +72,7 @@ p {
     display: flex;
     flex: 1;
     width: 100vw;
+    overflow: hidden;
 }
 
 #process-button {
@@ -83,6 +89,7 @@ label {
     display: flex;
     overflow: auto;
     width: 50%;
+    align-self: stretch;
 }
 
 #issuers-list-result {
@@ -112,7 +119,11 @@ label {
     margin-left: 10px;
     flex: 1;
 }
-    
+
+#main-form > div {
+    display: flex;
+}
+
 .div1 {
     grid-area: 1 / 1 / 3 / 2;
 }
@@ -141,7 +152,7 @@ label {
 
 textarea {
     width: 100%;
-    height: 100%;
+    resize: none;
 }
 
 #process-button {
